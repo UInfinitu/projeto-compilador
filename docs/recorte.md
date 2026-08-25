@@ -6,9 +6,7 @@
 
 # Que forma tem a descrição escrita pelo usuário
 
-**Decisão:** um programa é uma sequência de declarações `pattern` seguida de um bloco `rule`. Cada
-`pattern` associa um nome a uma expressão regular; cada ação dentro de `rule` reage ao casamento de
-um `pattern` nomeado, opcionalmente condicionada por um `where`, e produz saída por `emit`.
+**Decisão:** um programa é uma sequência de declarações `macro` ou `combo` seguida de um bloco `arena` (main). Cada declaração associa o nome do combo a uma expressão regular; Cada ação dentro de `arena` reage à criação de uma nova declaração nomeada que produz a saída por `emit`. As declarações podem opcionalmente serem um "dicionário" para outros combos, envolvendo um combo ou ataque já criado.
 
 # O que o sistema produz
 
