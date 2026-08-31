@@ -1,12 +1,17 @@
 # KomboScript
 
-- É uma linguagem escalável onde os comandos se equiparam a uma sequência de botões e comandos de um jogo de luta.
+- É uma linguagem de combos para um jogo de luta: cada combo é reconhecido em
+  fluxo, à medida que os comandos chegam, e a decisão de emitir uma saída é
+  irrevogável assim que ocorre.
 
-- A linguagem compõe várias features como o Timing (combo sincronizado), Assistentes (outros personagens), Troca de Personagens, que podem interpretar comandos básicos.
+- Comandos básicos (movimentos e ataques) são combinados em `macro` ou `combo`
+  através de três operadores de expressão regular: concatenação (`->`),
+  alternância (`|`) e fecho (`*`).
 
-Tipos: macro, combo movimento, ataque
+Tipos de declaração: `macro`, `combo`
 
-Comandos permitidos:
+Comandos permitidos (símbolos de movimento/ataque):
+
 - Cima
 - Baixo
 - Tras
@@ -15,7 +20,9 @@ Comandos permitidos:
 - SocoForte
 - Chute
 - ChuteForte
+- ChuteFraco
 - Agarrar
-- Cima + Frente + Chute Alto = Voadora
-- etc...
-- macro = variável
+
+Exemplo:
+
+- `combo Voadora = Cima -> Frente -> Chute;`
