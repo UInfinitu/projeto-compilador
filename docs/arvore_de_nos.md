@@ -2,11 +2,11 @@
 
 | Nome da Peça     | Trecho Real da Especificação | Padrão com Açúcar | Padrão no Núcleo                                                          | Forma Linear da Árvore                                    | Nós  |
 | :--------------- | :--------------------------- | :---------------- | :------------------------------------------------------------------------ | :-------------------------------------------------------- | :--- |
-| **Comando**      | `Baixo -> Frente -> Jab`     | `[A-Za-z]+`       | `concat(alt(D, alt(L, alt(l, eps))), fecho(alt(D, alt(L, alt(l, eps)))))` | `concat(alt('A',alt('B',...)), fecho(alt('A',...)))`      | 126  |
-| **Sinal**        | `->`                         | `->`              | `concat('-', '>')`                                                        | `concat('-', '>')`                                        | 3    |
-| **Número**       | `80`                         | `[0-9]+`          | `concat(D, fecho(D))`                                                     | `concat(alt('0',alt('1',...)), fecho(alt('0',...)))`      | 40   |
-| **Opcional**     | `?`                          | `?`               | `alt(x, eps)`                                                             | `alt(x, eps)`                                             | 3    |
-| **Palavra Fixa** | `arena`                      | `arena`           | `concat('a', concat('r', ...))`                                           | `concat('a', concat('r', concat('e', concat('n', 'a'))))` | 9    |
+| **Comando**      | `Baixo -> Frente -> Jab`     | `[A-Za-z]+`       | $$(A\vert{}B\vert{}...\vert{}Z\vert{}a\vert{}b\vert{}...\vert{}z) \cdot (A\vert{}B\vert{}...\vert{}Z\vert{}a\vert{}b\vert{}...\vert{}z)^*$$ | `concat(alt('A',alt('B',...)), fecho(alt('A',...)))`      | 126  |
+| **Sinal**        | `->`                         | `->`              | $$- \cdot >$$                                                        | `concat('-', '>')`                                        | 3    |
+| **Número**       | `80`                         | `[0-9]+`          | $$D \cdot D^*$$                                                  | `concat(alt('0',alt('1',...)), fecho(alt('0',...)))`      | 40   |
+| **Opcional**     | `?`                          | `?`               | $$\text{'?'}$$                                                             | `alt(x, eps)`                                             | 3    |
+| **Palavra Fixa** | `arena`                      | `arena`           | $$a \cdot r \cdot e \cdot n \cdot a$$                                           | `concat('a', concat('r', concat('e', concat('n', 'a'))))` | 9    |
 
 ---
 
